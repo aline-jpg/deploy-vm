@@ -1,0 +1,82 @@
+:root {
+  --fundo: #eef1ec;
+  --papel: #ffffff;
+  --tinta: #1d2a24;
+  --suave: #5d6b64;
+  --linha: #d5dcd6;
+  --destaque: #1f6f54;
+  --destaque-escuro: #16503d;
+  --perigo: #a8352a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+h1 { margin: 0; font-size: 2rem; letter-spacing: -0.01em; }
+.versao { margin: 0.25rem 0 1.75rem; color: var(--suave); font-size: 0.9rem; }
+
+#form-nova { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--papel);
+}
+
+button {
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+  background: var(--destaque);
+  color: #fff;
+}
+button:hover { background: var(--destaque-escuro); }
+button.secundario { background: transparent; color: var(--destaque); padding: 0.4rem 0.6rem; }
+button.secundario:hover { background: #e3ede8; }
+button.perigo { color: var(--perigo); }
+button.perigo:hover { background: #f6e4e2; }
+
+:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+
+#aviso { min-height: 1.4rem; margin: 0 0 0.5rem; color: var(--perigo); font-size: 0.9rem; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+li.feita .texto { text-decoration: line-through; color: var(--suave); }
+li .texto { flex: 1; word-break: break-word; }
+li input[type="checkbox"] { width: 1.15rem; height: 1.15rem; accent-color: var(--destaque); }
+li input.editar { flex: 1; padding: 0.4rem 0.6rem; }
+
+#vazio { color: var(--suave); text-align: center; margin-top: 2rem; }
+
+@media (max-width: 480px) {
+  #form-nova { flex-direction: column; }
+}

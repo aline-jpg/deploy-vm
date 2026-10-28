@@ -1,0 +1,19 @@
+name: Deploy automatico na VM
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    # Executa no Runner self-hosted instalado na propria VM
+    runs-on: self-hosted
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Subir aplicacao com Docker Compose
+        run: docker compose up -d --build
+
+      - name: Limpar imagens antigas
+        run: docker image prune -f

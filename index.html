@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarefas da dupla</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Tarefas da dupla</h1>
+      <p class="versao">Versão 1.0 — publicada automaticamente pelo GitHub Actions</p>
+    </header>
+
+    <form id="form-nova" autocomplete="off">
+      <input id="titulo" type="text" placeholder="O que precisa ser feito?" maxlength="120" required>
+      <button type="submit">Adicionar tarefa</button>
+    </form>
+
+    <p id="aviso" role="status"></p>
+    <ul id="lista"></ul>
+    <p id="vazio" hidden>Nenhuma tarefa ainda. Adicione a primeira acima.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
